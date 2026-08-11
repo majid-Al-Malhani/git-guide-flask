@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}404 — لم يُعثر على الصفحة | دليل Git{% endblock %}
+
+{% block content %}
+<section class="notfound">
+  <div class="wrap">
+    <div class="nf-graph" aria-hidden="true">
+      <svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="فرع منقطع لا يصل إلى أي لقطة">
+        <!-- الفرع الرئيسي -->
+        <path class="nf-main" d="M40,140 L480,140"/>
+        <!-- فرع يتفرّع ثم ينقطع في الفراغ -->
+        <path class="nf-lost" d="M180,140 C240,140 240,60 300,60 L400,60"/>
+        <!-- عُقَد الفرع الرئيسي -->
+        <circle cx="70"  cy="140" r="9" fill="#F05033"/>
+        <circle cx="180" cy="140" r="9" fill="#F05033"/>
+        <circle cx="450" cy="140" r="9" fill="#F05033"/>
+        <!-- عقدة على الفرع المنقطع -->
+        <circle cx="300" cy="60" r="9" fill="#54C7C0"/>
+        <!-- علامة النهاية المفقودة -->
+        <g class="nf-x">
+          <line x1="392" y1="52" x2="408" y2="68"/>
+          <line x1="408" y1="52" x2="392" y2="68"/>
+        </g>
+        <text class="nf-lbl" x="40" y="170">main</text>
+        <text class="nf-lbl" x="360" y="40" fill="#8A93BC">???</text>
+      </svg>
+    </div>
+
+    <span class="eyebrow">error 404 · detached HEAD</span>
+    <h1 class="nf-title">هذه الصفحة ليست في السجلّ</h1>
+    <p class="nf-text">يبدو أنك اتّبعت فرعًا لا يقود إلى أي لقطة (Commit). المسار الذي طلبته غير موجودٍ في هذا المستودع — ربما حُذف، أو كان الرابط خاطئًا من البداية.</p>
+
+    <div class="nf-terminal" aria-hidden="true">
+      <span class="cmt"># محاولة الوصول إلى المسار المطلوب</span><br>
+      <span class="kw">git</span> <span class="cmd">checkout</span> <span class="arg">&lt;الصفحة المفقودة&gt;</span><br>
+      <span class="err">error: pathspec did not match any file(s) known to git</span>
+    </div>
+
+    <div class="nf-actions">
+      <a href="{{ url_for('index') }}" class="btn btn-primary">العودة إلى الرئيسية</a>
+      <a href="{{ url_for('faq') }}" class="btn btn-ghost">تصفّح الأسئلة الشائعة</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

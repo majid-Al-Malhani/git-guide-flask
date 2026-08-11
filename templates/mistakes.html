@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}الأخطاء الشائعة | دليل Git{% endblock %}
+
+{% block content %}
+<section class="section-pad">
+  <div class="wrap page-head">
+    <span class="eyebrow">common mistakes</span>
+    <h1 class="section-title">الأخطاء الشائعة وكيف تتصرّف</h1>
+    <p class="section-intro">ليس هدف هذا القسم إلقاء الأوامر، بل توجيهك حين تقع في المواقف التي تربك كل مبتدئ. لكلٍّ منها سببٌ وحلٌّ واضح.</p>
+
+    <div class="mistakes">
+      {% for m in mistakes %}
+      <article class="mistake">
+        <div class="m-head">
+          <span class="m-tag">{{ m.tag }}</span>
+          <h2>{{ m.title }}</h2>
+        </div>
+        <p class="m-problem">{{ m.problem }}</p>
+        <div class="m-fix">
+          <span class="m-fix-label">الحل</span>
+          <p>{{ m.solution }}</p>
+        </div>
+        <div class="m-terminal" dir="ltr">
+          <div class="m-bar"><span class="b"></span><span class="b"></span><span class="b"></span></div>
+          <pre>{{ m.command | safe }}</pre>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="pager">
+      <a href="{{ url_for('usecases') }}"><span class="dir">&larr; prev</span><span class="ttl">الاستخدامات</span></a>
+      <a class="next" href="{{ url_for('faq') }}"><span class="dir">next &rarr;</span><span class="ttl">أسئلة شائعة</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

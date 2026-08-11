@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Git — دليلك المتكامل | الرئيسية{% endblock %}
+
+{% block content %}
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">distributed version control</span>
+    <h1>نظام <span class="accent">Git</span><br>ذاكرةُ مشروعك التي لا تنسى.</h1>
+    <p class="lead">من موقعٍ شخصيٍّ بسيط إلى منصّةٍ يعمل عليها مئات المبرمجين، يحفظ Git تاريخ مشروعك كاملًا، وينظّم التعاون، ويتيح التجربة دون خوفٍ من فقدان أي شيء.</p>
+    <div class="hero-actions">
+      <a href="{{ url_for('what') }}" class="btn btn-primary">تعرّف على الأساسيات</a>
+      <a href="{{ url_for('usecases') }}" class="btn btn-ghost">طرق الاستخدام</a>
+    </div>
+
+    <div class="graph-wrap">
+      <div class="cap">commit graph — كيف يتفرّع العمل ثم يُدمَج</div>
+      <div class="graph">
+        <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مخطّط يوضّح تفرّع فرع ميزة عن الفرع الرئيسي ثم دمجه">
+          <path class="path-main" d="M60,160 L740,160"/>
+          <path class="path-feat" d="M250,160 C320,160 320,70 390,70 L520,70 C590,70 590,160 660,160"/>
+          <circle class="node n1" cx="90"  cy="160" r="10" fill="#F05033"/>
+          <circle class="node n2" cx="250" cy="160" r="10" fill="#F05033"/>
+          <circle class="node n5" cx="660" cy="160" r="10" fill="#F05033"/>
+          <circle class="node n6" cx="740" cy="160" r="10" fill="#F05033"/>
+          <circle class="node n3" cx="390" cy="70" r="10" fill="#54C7C0"/>
+          <circle class="node n4" cx="520" cy="70" r="10" fill="#54C7C0"/>
+          <text class="lbl" x="60"  y="195">main</text>
+          <text class="lbl" x="360" y="45">feature</text>
+          <text class="lbl" x="628" y="195" fill="#F05033">merge</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap">
+    <span class="eyebrow">the guide</span>
+    <h2 class="section-title">ماذا يضمّ هذا الدليل؟</h2>
+    <p class="section-intro">خمس محطّاتٍ متدرّجة تأخذك من التعريف بالمفهوم حتى تطبيقه عمليًّا.</p>
+    <div class="cards">
+      <a class="card" href="{{ url_for('what') }}" style="text-decoration:none">
+        <div class="ic">// 01</div><h3>التعريف</h3><p>ما هو Git، وما معنى «نظام موزَّع لإدارة الإصدارات».</p>
+      </a>
+      <a class="card" href="{{ url_for('why') }}" style="text-decoration:none">
+        <div class="ic">// 02</div><h3>الأهمية</h3><p>المشكلات الحقيقية التي يحلّها في أي مشروع.</p>
+      </a>
+      <a class="card" href="{{ url_for('concepts') }}" style="text-decoration:none">
+        <div class="ic">// 03</div><h3>المفاهيم</h3><p>المصطلحات الأساسية، والفرق بين Git وGitHub.</p>
+      </a>
+      <a class="card" href="{{ url_for('usecases') }}" style="text-decoration:none">
+        <div class="ic">// 04</div><h3>الاستخدامات</h3><p>طرق التوظيف عبر أنواع المواقع وسير العمل.</p>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

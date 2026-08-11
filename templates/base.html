@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Git — دليلك المتكامل{% endblock %}</title>
+<meta name="description" content="موقع تعريفي متكامل بنظام Git لإدارة الإصدارات.">
+
+<!-- أيقونة الموقع (favicon) بصيغة SVG مضمّنة — بلا ملف خارجي وبلا JavaScript -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'><rect width='26' height='26' rx='6' fill='%230E1226'/><circle cx='7' cy='7' r='2.6' fill='%23F05033'/><circle cx='7' cy='20' r='2.6' fill='%23F05033'/><circle cx='19' cy='13.5' r='2.6' fill='%2354C7C0'/><path d='M7 9.6v8M7 14c0-4 3.5-1.5 9.5-1.5' stroke='%238891b5' stroke-width='1.8' fill='none'/></svg>">
+
+<!-- وسوم المشاركة (Open Graph) — تظهر معاينة لائقة عند مشاركة الرابط -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="دليل Git">
+<meta property="og:title" content="Git — دليلك المتكامل">
+<meta property="og:description" content="دليل تعريفي بنظام Git: ما هو، ولماذا يهم، وكيف يُستخدم عبر أنواع المواقع المختلفة.">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git — دليلك المتكامل">
+<meta name="twitter:description" content="دليل تعريفي بنظام Git: ما هو، ولماذا يهم، وكيف يُستخدم عبر أنواع المواقع المختلفة.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="{{ url_for('index') }}" aria-label="الصفحة الرئيسية">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="5" cy="5" r="3" fill="#F05033"/>
+          <circle cx="5" cy="21" r="3" fill="#F05033"/>
+          <circle cx="19" cy="13" r="3" fill="#54C7C0"/>
+          <path d="M5 8v10M5 15c0-5 4-2 11-2" stroke="#2A3357" stroke-width="2" fill="none"/>
+        </svg>
+        <span><span class="g">git</span>·دليل</span>
+      </a>
+
+      <!-- خانة اختيار مخفية تتحكّم بفتح/إغلاق قائمة الهاتف (بدون JavaScript) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-burger" aria-label="فتح القائمة" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- طبقة معتمة خلف القائمة عند فتحها على الهاتف -->
+      <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+
+      <div class="nav-links">
+        <a href="{{ url_for('what') }}"     class="{{ 'active' if active == 'what' }}">التعريف</a>
+        <a href="{{ url_for('why') }}"      class="{{ 'active' if active == 'why' }}">الأهمية</a>
+        <a href="{{ url_for('concepts') }}" class="{{ 'active' if active == 'concepts' }}">المفاهيم</a>
+        <a href="{{ url_for('usecases') }}" class="{{ 'active' if active == 'usecases' }}">الاستخدامات</a>
+        <a href="{{ url_for('mistakes') }}" class="{{ 'active' if active == 'mistakes' }}">الأخطاء</a>
+        <a href="{{ url_for('faq') }}"      class="{{ 'active' if active == 'faq' }}">أسئلة</a>
+        <a href="{{ url_for('faq') }}#cta"  class="nav-cta">ابدأ الآن</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="fbrand">
+        <svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="5" cy="5" r="3" fill="#F05033"/>
+          <circle cx="5" cy="21" r="3" fill="#F05033"/>
+          <circle cx="19" cy="13" r="3" fill="#54C7C0"/>
+          <path d="M5 8v10M5 15c0-5 4-2 11-2" stroke="#2A3357" stroke-width="2" fill="none"/>
+        </svg>
+        <span>دليل Git</span>
+      </div>
+      <div class="flinks">
+        <a href="{{ url_for('what') }}">التعريف</a>
+        <a href="{{ url_for('why') }}">الأهمية</a>
+        <a href="{{ url_for('concepts') }}">المفاهيم</a>
+        <a href="{{ url_for('usecases') }}">الاستخدامات</a>
+        <a href="{{ url_for('mistakes') }}">الأخطاء الشائعة</a>
+        <a href="{{ url_for('faq') }}">الأسئلة</a>
+      </div>
+      <div class="copy">built with Python · Flask — multi-page site · دليل تعريفي بنظام Git</div>
+    </div>
+  </footer>
+
+</body>
+</html>

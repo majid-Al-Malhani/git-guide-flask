@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}لماذا Git مهم؟ | دليل Git{% endblock %}
+
+{% block content %}
+<section class="section-pad">
+  <div class="wrap page-head">
+    <span class="eyebrow">why it matters</span>
+    <h1 class="section-title">لماذا يُعدّ Git مهمًّا؟</h1>
+    <p class="section-intro">لا تنبع أهميته من كونه أداةً تقنية فحسب، بل من أنه يحلّ مشكلاتٍ حقيقية يواجهها أي مشروع برمجي مهما صغُر حجمه.</p>
+
+    <div class="cards">
+      <div class="card"><div class="ic">// history</div><h3>سجلٌّ كامل للتغييرات</h3><p>اعرف ما تغيّر بالضبط في كل خطوة، وعُد إلى أي نسخة سابقة عند الحاجة.</p></div>
+      <div class="card"><div class="ic">// safety</div><h3>أمانٌ وتجربةٌ بلا خوف</h3><p>جرّب أفكارًا جديدة بحرّية؛ فإن لم تنجح، تعود إلى الحالة المستقرّة في ثوانٍ.</p></div>
+      <div class="card"><div class="ic">// teamwork</div><h3>تعاونٌ منظَّم</h3><p>يعمل عدّة مطوّرين على المشروع نفسه في آنٍ واحد، ويدمج Git أعمالهم دون تعارض.</p></div>
+      <div class="card"><div class="ic">// branching</div><h3>عزلُ الميزات</h3><p>تُطوَّر كل ميزةٍ أو إصلاحٍ في فرعٍ مستقل، فيبقى الإصدار الرئيسي مستقرًّا دائمًا.</p></div>
+    </div>
+
+    <div class="pager">
+      <a href="{{ url_for('what') }}"><span class="dir">&larr; prev</span><span class="ttl">التعريف</span></a>
+      <a class="next" href="{{ url_for('concepts') }}"><span class="dir">next &rarr;</span><span class="ttl">المفاهيم</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

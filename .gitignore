@@ -1,0 +1,28 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ===== البيئات الافتراضية =====
+venv/
+env/
+.venv/
+ENV/
+
+# ===== Flask =====
+instance/
+.webassets-cache
+*.log
+
+# ===== متغيرات البيئة والأسرار =====
+.env
+.env.*
+*.secret
+
+# ===== ملفات المحرّرات وأنظمة التشغيل =====
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

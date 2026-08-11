@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}أسئلة شائعة | دليل Git{% endblock %}
+
+{% block content %}
+<section class="section-pad">
+  <div class="wrap page-head">
+    <span class="eyebrow">frequently asked</span>
+    <h1 class="section-title">أسئلةٌ شائعة</h1>
+    <p class="section-intro">إجاباتٌ موجزة عن أكثر ما يتساءل عنه المبتدئون في Git.</p>
+
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary>هل أحتاج Git إذا كنت أعمل بمفردي؟<span class="plus">+</span></summary>
+        <p class="answer">نعم. حتى في المشاريع الفردية يمنحك Git سجلًّا موثوقًا لعملك، وحرّيةً في التجربة، ونسخةً احتياطيةً منظّمة يمكنك الرجوع إليها في أي وقت.</p>
+      </details>
+      <details class="faq">
+        <summary>هل Git صعبٌ على المبتدئين؟<span class="plus">+</span></summary>
+        <p class="answer">أساسياته بسيطة، ويكفي إتقان بضعة أوامر (add وcommit وpush) للبدء بفاعلية. أما المفاهيم المتقدّمة فتُتعلَّم تدريجيًّا مع الممارسة.</p>
+      </details>
+      <details class="faq">
+        <summary>ما الفرق بين Git وGitHub؟<span class="plus">+</span></summary>
+        <p class="answer">Git أداةٌ تعمل على جهازك لتتبُّع التغييرات، بينما GitHub منصّةٌ سحابية تستضيف مستودعاتك وتتيح مشاركتها والتعاون عليها. يمكن استعمال Git دون GitHub، لكن دمجهما معًا هو الأكثر شيوعًا.</p>
+      </details>
+      <details class="faq">
+        <summary>هل يصلح Git لغير ملفات الكود؟<span class="plus">+</span></summary>
+        <p class="answer">يعمل Git بأفضل صورةٍ مع الملفات النصّية (كود، توثيق، ملفات إعداد)، ويمكن استعماله لأي مشروعٍ قائم على النصوص. أما الملفات الثنائية الكبيرة فتُدار عبر إضافاتٍ مثل Git LFS.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="wrap">
+    <span class="eyebrow">get started</span>
+    <h2>ابدأ رحلتك مع Git اليوم</h2>
+    <p>ليس أداةً للفِرَق الكبيرة وحدها؛ تعلُّمه مبكرًا استثمارٌ يرافقك في كل مشروعٍ لاحق. حمّله، وأنشئ أول مستودعٍ لك، واحفظ أول لقطة.</p>
+    <a href="https://git-scm.com" class="btn btn-primary" target="_blank" rel="noopener">تحميل Git من الموقع الرسمي</a>
+  </div>
+</section>
+{% endblock %}

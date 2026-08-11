@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}طرق الاستخدام | دليل Git{% endblock %}
+
+{% block content %}
+<section class="section-pad">
+  <div class="wrap page-head">
+    <span class="eyebrow">across site types</span>
+    <h1 class="section-title">طرق الاستخدام الشائعة عبر أنواع المواقع</h1>
+    <p class="section-intro">يختلف أسلوب توظيف Git باختلاف نوع الموقع وحجم الفريق، لكن المبدأ يبقى واحدًا.</p>
+
+    <div class="usecases">
+      <div class="usecase">
+        <h3>المواقع الثابتة والمعارض الشخصية <span class="tag">static · portfolio</span></h3>
+        <p>تُبنى بـ HTML/CSS، ويُربط مستودعها بخدمةٍ مثل GitHub Pages لتُنشَر تلقائيًّا عند كل رفع (Push)؛ فيصبح Git أداةَ حفظٍ ونشرٍ في آنٍ واحد.</p>
+      </div>
+      <div class="usecase">
+        <h3>تطبيقات الويب الديناميكية <span class="tag">Flask · Django · Node</span></h3>
+        <p>تُطوَّر كل ميزةٍ في فرعٍ مستقل، ثم تُدمج بعد المراجعة. وكثيرًا ما يُربط المستودع بنظام تكاملٍ مستمر (CI/CD) يختبر الكود وينشره آليًّا عند الدمج.</p>
+      </div>
+      <div class="usecase">
+        <h3>مشاريع الفِرَق التعاونية <span class="tag">pull requests · review</span></h3>
+        <p>يعتمد الفريق على طلبات الدمج (Pull Requests)، حيث يراجع الزملاء الكود ويناقشونه قبل قبوله؛ فيتحوّل Git إلى منصّةٍ لضمان الجودة وتوثيق القرارات.</p>
+      </div>
+      <div class="usecase">
+        <h3>المشاريع مفتوحة المصدر <span class="tag">fork · contribute</span></h3>
+        <p>يَنسخ المساهمون المشروع (Fork)، ويضيفون تحسيناتهم، ثم يقترحونها عبر Pull Request؛ فيُسهم آلافٌ حول العالم في مشروعٍ واحد بنظامٍ واضح.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flow section-pad" style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">typical workflow</span>
+    <h2 class="section-title">سير عملٍ نموذجي</h2>
+    <p class="section-intro">من تهيئة المستودع حتى رفع التغييرات — خطواتٌ تتكرّر في معظم المشاريع.</p>
+    <div class="grid">
+      <div class="steps">
+        <div class="step"><span class="num">1</span><div><h4>التهيئة</h4><p>إنشاء مستودع Git داخل مجلّد المشروع.</p></div></div>
+        <div class="step"><span class="num">2</span><div><h4>التجهيز</h4><p>اختيار الملفات المراد حفظها ووضعها في منطقة التجهيز.</p></div></div>
+        <div class="step"><span class="num">3</span><div><h4>الحفظ</h4><p>إنشاء لقطة (Commit) مع رسالةٍ تصف التغيير.</p></div></div>
+        <div class="step"><span class="num">4</span><div><h4>التفريع</h4><p>فتح فرعٍ مستقل لتطوير ميزةٍ جديدة.</p></div></div>
+        <div class="step"><span class="num">5</span><div><h4>الرفع</h4><p>ربط المشروع بمستودعٍ بعيد ودفع التغييرات إليه.</p></div></div>
+      </div>
+      <div class="terminal">
+        <div class="bar"><span class="b"></span><span class="b"></span><span class="b"></span><span>bash — my-project</span></div>
+<pre><span class="cmt"># 1) تهيئة مستودع جديد</span>
+<span class="kw">git</span> <span class="cmd">init</span>
+
+<span class="cmt"># 2) إضافة الملفات إلى منطقة التجهيز</span>
+<span class="kw">git</span> <span class="cmd">add</span> <span class="arg">.</span>
+
+<span class="cmt"># 3) حفظ لقطة مع رسالة</span>
+<span class="kw">git</span> <span class="cmd">commit</span> <span class="arg">-m "الإصدار الأول"</span>
+
+<span class="cmt"># 4) إنشاء فرع والانتقال إليه</span>
+<span class="kw">git</span> <span class="cmd">checkout</span> <span class="arg">-b feature/contact</span>
+
+<span class="cmt"># 5) الربط بالمستودع البعيد والرفع</span>
+<span class="kw">git</span> <span class="cmd">remote add</span> <span class="arg">origin &lt;url&gt;</span>
+<span class="kw">git</span> <span class="cmd">push</span> <span class="arg">-u origin main</span></pre>
+      </div>
+    </div>
+
+    <div class="pager">
+      <a href="{{ url_for('concepts') }}"><span class="dir">&larr; prev</span><span class="ttl">المفاهيم</span></a>
+      <a class="next" href="{{ url_for('mistakes') }}"><span class="dir">next &rarr;</span><span class="ttl">الأخطاء الشائعة</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

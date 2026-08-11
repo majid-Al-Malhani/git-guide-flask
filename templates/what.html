@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}ما هو Git؟ | دليل Git{% endblock %}
+
+{% block content %}
+<section class="define section-pad">
+  <div class="wrap page-head">
+    <span class="eyebrow">what is git</span>
+    <h1 class="section-title">ما هو Git؟</h1>
+    <div class="grid">
+      <div>
+        <p><strong>Git</strong> نظامٌ موزَّع لإدارة الإصدارات (Distributed Version Control System)، وظيفته الأساسية تتبُّع التغييرات التي تطرأ على ملفات المشروع عبر الزمن.</p>
+        <p>في كل مرة تحفظ فيها تقدُّمك، يلتقط Git «لقطة» كاملة لحالة المشروع. وهكذا يتكوّن سجلٌّ متسلسل يمكنك الرجوع إليه في أي لحظة لمعرفة <strong>ما تغيّر، ومن غيّره، ومتى، ولماذا</strong>.</p>
+        <p>وكلمة «موزَّع» تعني أنّ نسخةً كاملةً من هذا التاريخ محفوظةٌ على جهاز كل مطوّر، لا على خادمٍ مركزيٍّ واحد؛ ما يجعل العمل ممكنًا حتى دون اتصالٍ بالإنترنت.</p>
+      </div>
+      <div class="snapshot" aria-hidden="true">
+        <div class="row"><span class="h">a1b2c3d</span><span class="t">الإصدار الأول من الموقع</span></div>
+        <div class="row"><span class="h">e4f5g6h</span><span class="t">إضافة صفحة «من نحن»</span></div>
+        <div class="row"><span class="h">i7j8k9l</span><span class="t">تصحيح تنسيق القائمة</span></div>
+        <div class="row"><span class="h">m1n2o3p</span><span class="t">تحسين الأداء</span></div>
+        <div class="row"><span class="m">HEAD → main · أحدث لقطة</span></div>
+      </div>
+    </div>
+
+    <div class="pager">
+      <a href="{{ url_for('index') }}"><span class="dir">&larr; prev</span><span class="ttl">الرئيسية</span></a>
+      <a class="next" href="{{ url_for('why') }}"><span class="dir">next &rarr;</span><span class="ttl">الأهمية</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

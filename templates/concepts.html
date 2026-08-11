@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}المفاهيم الأساسية | دليل Git{% endblock %}
+
+{% block content %}
+<section class="section-pad">
+  <div class="wrap page-head">
+    <span class="eyebrow">core concepts</span>
+    <h1 class="section-title">المفاهيم الأساسية</h1>
+    <p class="section-intro">هذه المصطلحات ستقابلها في كل مشروعٍ يستعمل Git، وفهمها يمهّد الطريق لكل ما بعده.</p>
+
+    <div class="defs">
+      <div class="def"><span class="term">Repository</span><span class="desc">المستودع؛ المجلّد الذي يحتوي مشروعك مع كامل تاريخ تغييراته.</span></div>
+      <div class="def"><span class="term">Commit</span><span class="desc">لقطة محفوظة لحالة المشروع في لحظة معيّنة، مصحوبة برسالةٍ تصف التغيير.</span></div>
+      <div class="def"><span class="term">Branch</span><span class="desc">فرع؛ مسارٌ مستقل للعمل يتيح تطوير ميزةٍ دون المساس بالمسار الرئيسي.</span></div>
+      <div class="def"><span class="term">Merge</span><span class="desc">دمج؛ عملية جمع التغييرات من فرعٍ إلى آخر.</span></div>
+      <div class="def"><span class="term">Remote</span><span class="desc">نسخة بعيدة من المستودع مستضافة على خادمٍ للمشاركة والنسخ الاحتياطي.</span></div>
+      <div class="def"><span class="term">Clone / Pull / Push</span><span class="desc">نَسْخ المستودع، ثم سحب أحدث التغييرات، ثم رفع تغييراتك إلى النسخة البعيدة.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="vs section-pad" style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">common confusion</span>
+    <h2 class="section-title">Git مقابل GitHub</h2>
+    <p class="section-intro">يخلط كثيرون بينهما، لكنهما شيئان مختلفان يكمّل أحدهما الآخر.</p>
+    <div class="grid">
+      <div class="col git">
+        <h3>Git</h3>
+        <div class="sub">the tool · الأداة</div>
+        <ul>
+          <li>برنامجٌ يعمل على جهازك</li>
+          <li>يتتبّع التغييرات محلّيًّا</li>
+          <li>يعمل دون اتصالٍ بالإنترنت</li>
+          <li>مفتوح المصدر ومجّاني</li>
+        </ul>
+      </div>
+      <div class="divider">+</div>
+      <div class="col hub">
+        <h3>GitHub</h3>
+        <div class="sub">the platform · المنصّة</div>
+        <ul>
+          <li>خدمةٌ سحابية تستضيف المستودعات</li>
+          <li>تتيح المشاركة والتعاون بين الفرق</li>
+          <li>تضيف مراجعة الكود وإدارة المهام</li>
+          <li>بدائل شائعة: GitLab وBitbucket</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="wrap">
+    <div class="pager" style="margin-top:0">
+      <a href="{{ url_for('why') }}"><span class="dir">&larr; prev</span><span class="ttl">الأهمية</span></a>
+      <a class="next" href="{{ url_for('usecases') }}"><span class="dir">next &rarr;</span><span class="ttl">الاستخدامات</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}
