@@ -25,27 +25,6 @@ git-site-flask/
         └── style.css    # التنسيقات المشتركة
 ```
 
-## خطوات التشغيل
-
-من داخل مجلّد المشروع، نفّذ الأوامر التالية:
-
-```bash
-# 1) إنشاء بيئة افتراضية (اختياري لكن مُستحسَن)
-python -m venv venv
-source venv/bin/activate        # على ويندوز: venv\Scripts\activate
-
-# 2) تثبيت المتطلبات
-pip install -r requirements.txt
-
-# 3) تشغيل الخادم
-python app.py
-```
-
-ثم افتح المتصفّح على العنوان:
-
-```
-http://127.0.0.1:5000
-```
 
 ## المسارات المتاحة
 
