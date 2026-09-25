@@ -1,0 +1,14 @@
+# * البيئات الافتراضية وملفات الترجمة
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# * ملفات Git و Docker
+.git/
+.gitignore
+Dockerfile
+.dockerignore
+
+# ! ملف خاص بـ Render لا معنى له داخل الحاوية
+runtime.txt
