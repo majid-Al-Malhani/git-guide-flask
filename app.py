@@ -3,6 +3,9 @@
 كل مسار (route) يقابله صفحة حقيقية مستقلّة لها محتواها الخاص.
 """
 
+# * أداة قراءة متغيرات البيئة مثل PORT و DEBUG
+import os
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -106,5 +109,12 @@ def page_not_found(error):
 
 
 if __name__ == "__main__":
-    # ! التشغيل في وضع التطوير — لا تستعمل debug=True في بيئة الإنتاج
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    # * هذه الكتلة لا تعمل مع gunicorn، فهو يستورد الملف فقط
+    app.run(
+        # * 0.0.0.0 ليعمل محليًا وداخل الحاوية معًا
+        host="0.0.0.0",
+        # * المنفذ من متغير البيئة، وإلا 5000
+        port=int(os.environ.get("PORT", 5000)),
+        # ! التصحيح معطّل افتراضيًا، ويُفعَّل بضبط DEBUG=True صراحةً
+        debug=os.environ.get("DEBUG", "False") == "True",
+    )
